@@ -3,12 +3,18 @@ Repository for QA Module 5
 2026-01-06  
 Viola  
 
-## Brief:  
-  
-Create Architecture Diagram  
-Create Project Plan/Kanban board  
-Update README file  
+## Project Introduction
+### Background
+The library currently performs data quality checks and reporting manually. This process is time-consuming, prone to human error, and difficult to scale as data volumes increase. There is also limited automation, which prevents stakeholders, librarians, and users from accessing up-to-date information.
 
+### Project Aim
+The aim of this project is to design and implement an automated data processing pipeline using Python, GitHub, and Azure DevOps. The solution will clean, validate, and transform library data, producing a presentation-ready dataset for reporting in Power BI.
+
+### Objectives
+Reduce manual effort through automation
+Improve data quality, consistency, and reliability
+Enable repeatable and auditable data transformations
+Provide timely insights for operational and strategic decision-making  
 
 ### Architecture Diagram
 ![Architecture Diagram](./Architecture%20Diagram.png "Architecture Diagram")
