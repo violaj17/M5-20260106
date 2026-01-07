@@ -53,7 +53,7 @@ book_df['Loan duration'] = loan_duration(df=book_df)
 
 
 ### Customer Data
-
+'''
 # Import Customers data into a Pandas dataframe
 customers_dataframe = pd.read_csv("./Sample data/03_Library Systemcustomers.csv")
 customers_dataframe
@@ -63,4 +63,13 @@ customers_df = customers_dataframe.dropna(subset=["Customer ID"])
 
 # Convert float Customer id values to int
 customers_df["Customer ID"] = customers_df[["Customer ID"]].astype("Int64")
+'''
 
+def clean_customer_data(input_file_path, output_file_path):
+    cust_df = pd.read_csv(input_file_path)
+    cust_df = cust_df.dropna(subset=["Customer ID"])
+    cust_df["Customer ID"] = cust_df[["Customer ID"]].astype("Int64")
+    cust_df.to_csv(output_file_path, index=False)
+    print("Customer file cleaned.")
+
+clean_customer_data(input_file_path="./Sample data/03_Library Systemcustomers.csv", output_file_path="./Cleaned data/03_Library Systemcustomers.csv")
