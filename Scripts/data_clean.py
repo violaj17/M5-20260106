@@ -3,10 +3,25 @@ import pandas as pd
 
 ### Book Data
 
-# Add load duration column to book dataframe
+# Add loan duration column to book dataframe - option 1
 def dataEnrich(df):
     return df['Book Returned'] - df['Book checkout']
 
+# Add loan duration column to book dataframe - option 2
+def enrich_dateDuration(colA, colB, df):
+    """
+    Takes the two datetime input column names and the dataframe to create a new column date_delta which is the difference, in days, between colA and colB.
+    
+    Note:
+    colB>colA
+    """
+    df['date_delta'] = (df[colB]-df[colA]).dt.days
+
+    #Conditional Filtering to be able to gauge eroneous loans.
+    df.loc[df['date_delta'] < 0, 'valid_loan_flag'] = False
+    df.loc[df['date_delta'] >= 0, 'valid_loan_flag'] = True
+
+    return df
 
 def clean_book_data(input_file_path, output_file_path):
     # Import data into a Pandas dataframe
@@ -28,7 +43,8 @@ def clean_book_data(input_file_path, output_file_path):
     book_df["Customer ID"] = book_df[["Customer ID"]].astype("Int64")
     book_df["Id"] = book_df[["Id"]].astype("Int64")
     # Enrich dataframe
-    book_df['Loan duration'] = dataEnrich(df=book_df)
+    # book_df['Loan duration'] = dataEnrich(df=book_df)
+    book_df = enrich_dateDuration(df=book_df, colA='Book Returned', colB='Book checkout')
     # Write cleaned data into csv file
     book_df.to_csv(output_file_path, index=False)
     print("Book file cleaned.")
