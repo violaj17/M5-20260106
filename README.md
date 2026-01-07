@@ -36,30 +36,33 @@ Provide timely insights for operational and strategic decision-making
 
 ## Scripts
 
-- **Scripts/data_clean.py**  
+- **scripts/app_refactored.py**  
+    Refactored verion of the main application script. This script improves code structure, readability, and maintainability, and writes the cleaned data into SSMS.
+
+- **scripts/data_clean.py**  
     Contains functions for cleaning and enriching library book and customer data.
     - 'clean_book_data': Cleans book records, removes duplicates, fixes date formats, and calculates loan durations.
     - 'clean_customer_data': Cleans customer records and ensures valid customer IDs.
     - 'dataEnrich': Calculates the duration between book checkout and return dates.
 
-- **Scripts/data_clean.ipynb**  
+- **scripts/data_clean.ipynb**  
     Jupyter notebook for interactive data cleaning and exploration.
 
-- **Scripts/SSMS_load.py**  
+- **scripts/SSMS_load.py**  
     Script for loading cleaned data into SQL Server Management Studio (SSMS). Testing of connection required.
 
-- **Scripts/jupyter_to_python.py**  
+- **scripts/jupyter_to_python.py**  
     Utility for converting Jupyter notebooks to Python scripts. 
 
 ## Tests
 
-- **Testing/test_data_enrich.py**  
+- **testing/test_data_enrich.py**  
     Unit tests for the 'dataEnrich' function, verifying correct calculation of loan durations from sample data.
 
-- **Testing/test_level1.py**  
+- **testing/test_level1.py**  
     Unit tests for the 'Calculcator' class, checking basic arithmetic operations.
 
-- **Testing/calculator.py**  
+- **testing/calculator.py**  
     Implementation of the 'Calculator' class used in tests.
 
 All scripts and tests are designed to support automated data processing, validation, and reporting for the library system.
