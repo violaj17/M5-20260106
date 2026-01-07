@@ -1,19 +1,19 @@
 import unittest
 import pandas as pd
-from Scripts.data_clean import dataEnrich
+from scripts.data_clean import dataEnrich
 
 class TestDataEnrich(unittest.TestCase):
 
     def test_data_enrich(self):
         # Create a sample dataframe
         data = {
-            'Book checkout': pd.to_datetime(['2023-01-01']),
-            'Book Returned': pd.to_datetime(['2023-01-10'])
+            'Book checkout': pd.to_datetime(['2023-01-01', '2023-02-01', '2023-02-28']),
+            'Book Returned': pd.to_datetime(['2023-01-10', '2023-02-17', '2023-03-04'])
         }
         df = pd.DataFrame(data)
 
         # Expected loan duration
-        expected_duration = pd.Series([9])
+        expected_duration = pd.Series([9, 16, 4])
 
         # Calculate loan duration using dataEnrich function (in days)
         result = dataEnrich(df).dt.days

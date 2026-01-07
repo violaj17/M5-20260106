@@ -49,5 +49,5 @@ def clean_customer_data(input_file_path, output_file_path):
     print("Customer file cleaned.")
 
 if __name__ == "__main__":
-    clean_book_data(input_file_path="./Sample data/03_Library Systembook.csv", output_file_path="./Cleaned data/03_Library Systembook.csv")
-    clean_customer_data(input_file_path="./Sample data/03_Library Systemcustomers.csv", output_file_path="./Cleaned data/03_Library Systemcustomers.csv")
+    clean_book_data(input_file_path="./sample_data/03_Library Systembook.csv", output_file_path="./cleaned_data/03_Library Systembook.csv")
+    clean_customer_data(input_file_path="./sample_data/03_Library Systemcustomers.csv", output_file_path="./cleaned_data/03_Library Systemcustomers.csv")
