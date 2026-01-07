@@ -4,7 +4,7 @@ import pandas as pd
 ### Book Data
 
 # Add load duration column to book dataframe
-def loan_duration(df):
+def dataEnrich(df):
     return df['Book Returned'] - df['Book checkout']
 
 
@@ -28,13 +28,10 @@ def clean_book_data(input_file_path, output_file_path):
     book_df["Customer ID"] = book_df[["Customer ID"]].astype("Int64")
     book_df["Id"] = book_df[["Id"]].astype("Int64")
     # Enrich dataframe
-    book_df['Loan duration'] = loan_duration(df=book_df)
+    book_df['Loan duration'] = dataEnrich(df=book_df)
     # Write cleaned data into csv file
     book_df.to_csv(output_file_path, index=False)
     print("Book file cleaned.")
-
-clean_book_data(input_file_path="./Sample data/03_Library Systembook.csv", output_file_path="./Cleaned data/03_Library Systembook.csv")
-
 
 
 
@@ -51,4 +48,6 @@ def clean_customer_data(input_file_path, output_file_path):
     cust_df.to_csv(output_file_path, index=False)
     print("Customer file cleaned.")
 
-clean_customer_data(input_file_path="./Sample data/03_Library Systemcustomers.csv", output_file_path="./Cleaned data/03_Library Systemcustomers.csv")
+if __name__ == "__main__":
+    clean_book_data(input_file_path="./Sample data/03_Library Systembook.csv", output_file_path="./Cleaned data/03_Library Systembook.csv")
+    clean_customer_data(input_file_path="./Sample data/03_Library Systemcustomers.csv", output_file_path="./Cleaned data/03_Library Systemcustomers.csv")
