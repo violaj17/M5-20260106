@@ -80,4 +80,4 @@ All scripts and tests are designed to support automated data processing, validat
 
 ### Commands:  
 - docker build -t <container_name>
-- docker un <container_name>
+- docker run <container_name>
