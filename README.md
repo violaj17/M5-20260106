@@ -21,8 +21,10 @@ Provide timely insights for operational and strategic decision-making
 
 ### Architecture Diagram
 
+Initial Architecture Diagram (2026/01/05):  
 ![Architecture Diagram](./Architecture%20Diagram.png "Architecture Diagram")  
 
+Updated Architecture Diagram (2026/01/08):   
 ![New Architecture Diagram](Architecture%20Diagram%20New.png "New Architecture Diagram")
 
 ### Project Plan
@@ -78,6 +80,29 @@ All scripts and tests are designed to support automated data processing, validat
 
 ## Docker 
 
-### Commands:  
-- docker build -t <container_name>
-- docker run <container_name>
+Docker is used to containerize the application, making it easy to build, run, and deploy in any environmet.
+
+### Building the Docker Image
+
+To build the Docker image, run: 
+'''
+docker build -f docker/Dockerfile -t <image_name> .
+'''
+Replace '<image_name>' with your preferred image name. E.g. docker build -f docker/Dockerfile -t data-clean-app .
+
+### Building the Docker Container
+
+To run the container:
+'''
+docker run <image_name>
+'''
+Replace '<image_name>' with the image name. E.g. docker run data-clean-app
+
+### Notes
+
+- Ensure your data files and any required configuration are accessible to the container. To see the project structure, check what Docker has copied:
+    - Run an interactive shell: docker run -it --entrypoint sh <image-name>
+    - Then inside the container run: ls -R /app
+- Update the Dockerfile as necessary to include all dependences, and include packages in the 'requirements.txt' file.
+- For database connectivity, make sure the container can access your SQL Server instance. (WIP)
+
