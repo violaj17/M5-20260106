@@ -1,4 +1,5 @@
 FROM python:3.12-slim
 WORKDIR /app
 COPY . /app
-ENTRYPOINT ["python3", "./division.py"]
+RUN pip install -r docker/requirements.txt
+ENTRYPOINT ["python3", "scripts/app_refactored.py"]
