@@ -2,7 +2,7 @@
 
 import pandas as pd
 from sqlalchemy import create_engine
-#import pyodbc
+import pyodbc
 
 # Function to output dataframe that can be manipulated via a filepath
 def fileLoader(filepath):
