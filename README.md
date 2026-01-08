@@ -75,3 +75,9 @@ Provide timely insights for operational and strategic decision-making
     Implementation of the 'Calculator' class used in tests.
 
 All scripts and tests are designed to support automated data processing, validation, and reporting for the library system.
+
+## Docker 
+
+### Commands:  
+- docker build -t <container_name>
+- docker un <container_name>
