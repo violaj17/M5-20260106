@@ -2,7 +2,7 @@
 
 import pandas as pd
 from sqlalchemy import create_engine
-import pyodbc
+# import pyodbc
 
 # Function to output dataframe that can be manipulated via a filepath
 def fileLoader(filepath):
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
     print(data2)
     print('**************** DATA CLEANED ****************')
-
+'''
     print('Writing to SQL Server...')
 
     writeToSQL(
@@ -129,3 +129,4 @@ if __name__ == '__main__':
         database = 'DE5_Module5'
     )
     print('**************** End ****************')
+'''
