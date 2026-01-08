@@ -14,10 +14,10 @@ The aim of this project is to design and implement an automated data processing 
 
 ### Objectives
 
-Reduce manual effort through automation
-Improve data quality, consistency, and reliability
-Enable repeatable and auditable data transformations
-Provide timely insights for operational and strategic decision-making  
+- Reduce manual effort through automation  
+- Improve data quality, consistency, and reliability  
+- Enable repeatable and auditable data transformations  
+- Provide timely insights for operational and strategic decision-making   
 
 ### Architecture Diagram
 
@@ -37,7 +37,7 @@ Updated Architecture Diagram (2026/01/08):
 6. Reporting and Visualisation
 7. Documentation
 
-### User Stories
+### Example User Stories
 
 1. As a stakeholder, I want to reduce manual work and automate our process.
 2. As a library user, I want an up-to-date status of our account/books.
@@ -59,24 +59,10 @@ Updated Architecture Diagram (2026/01/08):
 - **scripts/data_clean.ipynb**  
     Jupyter notebook for interactive data cleaning and exploration.
 
-- **scripts/SSMS_load.py**  
-    Script for loading cleaned data into SQL Server Management Studio (SSMS). Testing of connection required.
-
-- **scripts/jupyter_to_python.py**  
-    Utility for converting Jupyter notebooks to Python scripts. 
-
-## Tests
+## Testing
 
 - **testing/test_data_enrich.py**  
     Unit tests for the 'dataEnrich' function, verifying correct calculation of loan durations from sample data.
-
-- **testing/test_level1.py**  
-    Unit tests for the 'Calculcator' class, checking basic arithmetic operations.
-
-- **testing/calculator.py**  
-    Implementation of the 'Calculator' class used in tests.
-
-All scripts and tests are designed to support automated data processing, validation, and reporting for the library system.
 
 ## Docker 
 
@@ -84,18 +70,18 @@ Docker is used to containerize the application, making it easy to build, run, an
 
 ### Building the Docker Image
 
-To build the Docker image, run: 
-'''
-docker build -f docker/Dockerfile -t <image_name> .
-'''
+To build the Docker image, run:  
+'''  
+docker build -f docker/Dockerfile -t <image_name> .  
+'''  
 Replace '<image_name>' with your preferred image name. E.g. docker build -f docker/Dockerfile -t data-clean-app .
 
 ### Building the Docker Container
 
-To run the container:
-'''
-docker run <image_name>
-'''
+To run the container:  
+'''  
+docker run <image_name>  
+'''  
 Replace '<image_name>' with the image name. E.g. docker run data-clean-app
 
 ### Notes
@@ -106,3 +92,5 @@ Replace '<image_name>' with the image name. E.g. docker run data-clean-app
 - Update the Dockerfile as necessary to include all dependences, and include packages in the 'requirements.txt' file.
 - For database connectivity, make sure the container can access your SQL Server instance. (WIP)
 
+## Archive
+Folder containing draft files and notes for initial learning and experimenting.
