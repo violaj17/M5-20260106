@@ -48,7 +48,7 @@ Updated Architecture Diagram (2026/01/08):
 ## Scripts
 
 - **scripts/app_refactored.py**  
-    Refactored verion of the main application script. This script improves code structure, readability, and maintainability, and writes the cleaned data into SSMS.
+    Refactored version of the main application script. This script improves code structure, readability, and maintainability, and writes the cleaned data into SSMS.
 
 - **scripts/data_clean.py**  
     Contains functions for cleaning and enriching library book and customer data.
