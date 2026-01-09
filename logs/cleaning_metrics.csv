@@ -1,0 +1,4 @@
+timestamp,dataset,initial_rows,final_rows,duplicates_dropped,null_rows_dropped,invalid_dates_removed,invalid_loans,valid_loans,total_dropped,retention_rate,blank_values_before,processing_time_seconds,input_file,output_file
+2026-01-09 11:00:29.957987,books,114,19,22,2,1,13,6,95,16.666666666666664,560,0.019978,./sample_data/03_Library Systembook.csv,./cleaned_data/03_Library Systembook.csv
+2026-01-09 11:00:55.895943,books,114,19,22,2,1,13,6,95,16.666666666666664,560,0.0179,./sample_data/03_Library Systembook.csv,./cleaned_data/03_Library Systembook.csv
+2026-01-09 11:00:55.924144,books,9,8,0,1,0,0,0,1,88.88888888888889,2,0.004013,./sample_data/03_Library Systemcustomers.csv,./cleaned_data/03_Library Systemcustomers.csv
