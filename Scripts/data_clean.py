@@ -153,7 +153,7 @@ def clean_customer_data(input_file_path, output_file_path):
     # Save metrics to CSV for dashboard
     metrics = {
         'timestamp': start_time,
-        'dataset': 'books',
+        'dataset': 'customers',
         'initial_rows': initial_rows,
         'final_rows': final_rows,
         'duplicates_dropped': 0,
