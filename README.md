@@ -106,4 +106,11 @@ docker run --mount type=volume,source=container-data,target=/data hello-volume
 - For database connectivity, make sure the container can access your SQL Server instance. (WIP)
 
 ## Archive
-Folder containing draft files and notes for initial learning and experimenting.
+
+Folder containing draft files and notes for initial learning and experimenting.  
+
+## Power BI Metrics Dashboard
+
+A Power BI dashboard was created to visualise the data cleaning pipeline performance using metrics from ght cleaning_metrics.csv log file. The dashboard displays key pperformance indicators (total rows processed, retention rates, pipeline runs), data quality trends over time, and filters for dataset selection. This provides stakeholders with insights into the effectiveness of the pipeline and helps identify areas requiring attention or improvement.
+
+
