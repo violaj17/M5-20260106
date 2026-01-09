@@ -84,6 +84,19 @@ docker run <image_name>
 '''  
 Replace '<image_name>' with the image name. E.g. docker run data-clean-app
 
+### Docker Mounting Commands
+
+docker build -t hello-mount .  
+docker run -v "$(pwd)/outputs:/data" hello-mount  
+docker images  
+
+### Docker Volume Commands
+
+docker build -t hello-volume .  
+docker volume create container-data  
+docker volume ls  
+docker run --mount type=volume,source=container-data,target=/data hello-volume  
+
 ### Notes
 
 - Ensure your data files and any required configuration are accessible to the container. To see the project structure, check what Docker has copied:
