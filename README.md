@@ -25,7 +25,7 @@ Initial Architecture Diagram (2026/01/05):
 ![Architecture Diagram](./Architecture%20Diagram.png "Architecture Diagram")  
 
 Updated Architecture Diagram (2026/01/08):   
-![New Architecture Diagram](Architecture%20Diagram%20New.png "New Architecture Diagram")
+![New Architecture Diagram](./Architecture%20Diagram%20New.png "New Architecture Diagram")
 
 ### Project Plan
 
@@ -114,6 +114,6 @@ Folder containing draft files and notes for initial learning and experimenting.
 A Power BI dashboard was created to visualise the data cleaning pipeline performance using metrics from ght cleaning_metrics.csv log file. The dashboard displays key pperformance indicators (total rows processed, retention rates, pipeline runs), data quality trends over time, and filters for dataset selection. This provides stakeholders with insights into the effectiveness of the pipeline and helps identify areas requiring attention or improvement.  
 
 **Power BI Metrics Dashboard**   
-![Power BI Metrics Dashboard](Metrics%Dashboard.png "Metrics Dashboard")
+![Power BI Metrics Dashboard](./Metrics%20Dashboard.png "Metrics Dashboard")
 
 
