@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import unittest
 import pandas as pd
 from scripts.data_clean import enrich_dateDuration
@@ -22,6 +26,6 @@ class TestEnrichDateDuration(unittest.TestCase):
         self.assertListEqual(result['date_delta'].tolist(), expected_deltas)
 
         
-if __name__ == "__main":
+if __name__ == "__main__":
     unittest.main()
 
