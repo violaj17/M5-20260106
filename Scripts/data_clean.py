@@ -45,15 +45,15 @@ def clean_book_data(input_file_path, output_file_path):
     # Count blank/null values before cleaning
     blank_values_before = book_df.isnull().sum().sum()
 
-    # Drop duplicate records
-    before_dedup = len(book_df)
-    book_df = book_df.drop_duplicates()
-    duplicates_dropped = before_dedup = len(book_df)
-
     # Remove rows with null Id or Book name
     before_null_removal = len(book_df)
     book_df = book_df.dropna(subset=["Id","Books"])
     null_rows_dropped = before_null_removal - len(book_df)
+
+    # Drop duplicate records
+    before_dedup = len(book_df)
+    book_df = book_df.drop_duplicates()
+    duplicates_dropped = before_dedup = len(book_df)
 
     # Remove leading and trailing spaces from Book name
     book_df["Books"] = book_df["Books"].str.strip()
@@ -101,8 +101,8 @@ def clean_book_data(input_file_path, output_file_path):
         'dataset': 'books',
         'initial_rows': initial_rows,
         'final_rows': final_rows,
-        'duplicates_dropped': duplicates_dropped,
         'null_rows_dropped': null_rows_dropped,
+        'duplicates_dropped': duplicates_dropped,
         'invalid_dates_removed': invalid_dates_removed,
         'invalid_loans': invalid_loans,
         'valid_loans': valid_loans,
@@ -156,8 +156,8 @@ def clean_customer_data(input_file_path, output_file_path):
         'dataset': 'customers',
         'initial_rows': initial_rows,
         'final_rows': final_rows,
-        'duplicates_dropped': 0,
         'null_rows_dropped': null_rows_dropped,
+        'duplicates_dropped': 0,
         'invalid_dates_removed': 0,
         'invalid_loans': 0,
         'valid_loans': 0,
